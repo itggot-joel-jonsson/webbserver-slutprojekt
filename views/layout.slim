@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html lang="en"
+    head
+        meta charset="UTF-8"/
+        meta name="viewport" content="width=device-width, initial-scale=1.0"/
+        meta http-equiv="X-UA-Compatible" content="ie=edge"/
+        link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+        /  <!-- Compiled and minified CSS -->
+        link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
+        title shop
+
+    body class="row"
+        nav
+            div class="nav-wrapper green"
+                a href="/" class="brand-logo" Logo
+                ul id="nav-mobile" class="right hide-on-med-and-down"
+                    li
+                        - if logged == true
+                            a #{username}
+                    li 
+                        - if logged != true
+                            a class="btn-flat white-text" href="/logreg" Login/Register 
+                        - else
+                            form  action="/logout" method="POST"
+                                input class="btn-flat white-text" type="submit" value="Logout"
+                    li
+                        a href="#" <i class="material-icons">shopping_cart</i>
+        main class="col s10 offset-s1"
+            ==yield

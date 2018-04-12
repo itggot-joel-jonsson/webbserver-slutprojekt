@@ -1,0 +1,12 @@
+form class="section" action="/login" method="POST"
+    input type="text" name="log-username" placeholder="Username"
+    input type="password" name="log-password" placeholder="Password"
+    input class="waves-effect waves-light btn-large green" type="submit" value="Login"
+
+form class="section" action="/register" method="POST"
+    input type="text" name="reg-username" placeholder="Username"
+    input type="password" name="reg-password1" placeholder="Password"
+    input type="password" name="reg-password2" placeholder="Confirm Password"    
+    input class="waves-effect waves-light btn-large green" type="submit" value="Register"
+
+p #{error}
