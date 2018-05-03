@@ -9,21 +9,24 @@ html lang="en"
         link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
         title shop
 
-    body class="row"
+    body class="row grey lighten-4"
         nav
-            div class="nav-wrapper green"
-                a href="/" class="brand-logo" Logo
+            div class="nav-wrapper white"
+                a href="/" class="brand-logo black-text" Logo
                 ul id="nav-mobile" class="right hide-on-med-and-down"
                     li
                         - if logged == true
-                            a #{username}
+                            a class="black-text" #{username}
                     li 
                         - if logged != true
-                            a class="btn-flat white-text" href="/logreg" Login/Register 
+                            a href="/logreg" class="black-text" LOGIN/REGISTER 
                         - else
                             form  action="/logout" method="POST"
-                                input class="btn-flat white-text" type="submit" value="Logout"
+                                input class="btn-flat black-text" type="submit" value="Logout"
+                    - if logged == true
+                        li
+                            a href="/wishlist" <i class="material-icons amber-text">star</i>
                     li
-                        a href="#" <i class="material-icons">shopping_cart</i>
-        main class="col s10 offset-s1"
+                        a href="/basket" <i class="material-icons black-text">shopping_cart</i>
+        main class="col s10 offset-s1 "
             ==yield

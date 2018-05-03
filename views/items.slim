@@ -1,0 +1,13 @@
+- items.each do |i|
+    div class="col s3"
+        div class="card white"
+            div class="card-content black-text"
+                span class="card-title" #{i[1]}
+                p PRICE: #{i[3]} SEK
+            div class="card-action"
+                form class="section" action="/addtobasket+#{i[0]}" method="POST"  
+                    input class="btn-flat green-text" type="submit" value="ADD TO BASKET"
+            - if logged == true
+                div class="card-action"
+                    form class="section" action="/addtowishlist+#{i[0]}" method="POST"  
+                        input class="btn-flat amber-text" type="submit" value="ADD TO WISHLIST"

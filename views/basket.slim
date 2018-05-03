@@ -1,0 +1,13 @@
+- basketitems.sort.each do |b|
+    div class="col s3"
+        div class="card white"
+            div class="card-content black-text"
+                span class="card-title" #{b[0][1]}
+                p PRICE: #{b[0][3]} SEK
+            div class="card-action"
+                form class="section" action="/removefrombasket+#{b[0][0]}" method="POST"  
+                    input class="btn-flat red-text" type="submit" value="REMOVE FROM BASKET"
+            - if logged == true
+                div class="card-action"
+                    form class="section" action="/addtowishlist+#{b[0][0]}" method="POST"  
+                        input class="btn-flat amber-text" type="submit" value="ADD TO WISHLIST"
